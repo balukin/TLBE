@@ -549,12 +549,14 @@ function GUI.onTextChanged(event)
             playerSettings.cameras[playerSettings.guiPersist.selectedCamera]
         )
     elseif event.element.name == "camera-resolution-x" then
-        Camera.setWidth(playerSettings, playerSettings.cameras[playerSettings.guiPersist.selectedCamera],
+        Camera.setWidth(playerSettings, game.players[event.player_index],
+            playerSettings.cameras[playerSettings.guiPersist.selectedCamera],
             event.element.text)
         GUI.updateCameraInfo(playerSettings.gui.cameraInfo,
             playerSettings.cameras[playerSettings.guiPersist.selectedCamera])
     elseif event.element.name == "camera-resolution-y" then
-        Camera.setHeight(playerSettings, playerSettings.cameras[playerSettings.guiPersist.selectedCamera],
+        Camera.setHeight(playerSettings, game.players[event.player_index],
+            playerSettings.cameras[playerSettings.guiPersist.selectedCamera],
             event.element.text)
         GUI.updateCameraInfo(playerSettings.gui.cameraInfo,
             playerSettings.cameras[playerSettings.guiPersist.selectedCamera])
